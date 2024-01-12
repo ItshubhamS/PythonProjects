@@ -1,4 +1,3 @@
-
 height = float(input())
 weight = int(input())
 Bmi= (weight / (height*height))
@@ -17,3 +16,5 @@ else:
   
   
   
+
+
