@@ -16,7 +16,7 @@ v = comined_name_lowercase.count("v")
 e = comined_name_lowercase.count("e")
 second_digit = l + o + v + e
 
-final_score = int(str(first_digit)) + int(str(second_digit))
+final_score = int(str(first_digit) + str(second_digit))
 if final_score < 10 or final_score > 90:
     print(f"Your score is {final_score}, you go together like coke and mentos.")
 elif final_score > 40 and final_score < 50:
