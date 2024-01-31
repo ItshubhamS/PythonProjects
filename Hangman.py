@@ -1,74 +1,12 @@
 import random
+import wordlist
+import hangmanArt
 
-stages = [
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========""",
-    """
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-""",
-]
-
+print(hangmanArt.logo)
 total_lives = 6
 FinalList = []
-word_list = ["ardvark", "baboon", "camel"]
-randomletter = random.choice(word_list)
+# word_list = ["ardvark", "baboon", "camel"]
+randomletter = random.choice(wordlist.word_list)
 for i in range(len(randomletter)):
     FinalList += "_"
 print(FinalList)
@@ -90,4 +28,4 @@ while end_of_game is False:
     if total_lives == 0:
         end_of_game = True
         print("you Loose")
-    print(stages[total_lives])
+    print(hangmanArt.stages[total_lives])
