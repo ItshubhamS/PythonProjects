@@ -67,7 +67,7 @@ stages = [
 
 total_lives = 6
 FinalList = []
-word_list = ["aardvark", "baboon", "camel"]
+word_list = ["ardvark", "baboon", "camel"]
 randomletter = random.choice(word_list)
 for i in range(len(randomletter)):
     FinalList += "_"
@@ -80,7 +80,7 @@ while end_of_game is False:
         letter = randomletter[position]
         if letter == GuessLetter:
             FinalList[position] = letter
-    print(f"{' '.join(FinalList)}")
+    print(FinalList)
     if GuessLetter not in randomletter:
         total_lives -= 1
 
