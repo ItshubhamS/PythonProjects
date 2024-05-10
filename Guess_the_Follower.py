@@ -51,7 +51,6 @@ def game():
         b_follower_count = account_b["follower_count"]
         is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
-        clear()
         print(logo)
         if is_correct:
             score += 1
