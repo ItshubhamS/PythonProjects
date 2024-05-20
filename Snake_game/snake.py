@@ -2,6 +2,10 @@ from turtle import *
 
 START_POINT = [(-20, 0), (-40, 0), (-60, 0)]
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
@@ -13,12 +17,21 @@ class Snake:
     # Creating Snakes
     def create_snake(self):
         for position in START_POINT:
-            new_segment = Turtle(shape="square")
-            new_segment.penup()
-            new_segment.color("white")
-            new_segment.goto(position)
-            new_segment.speed("fast")
-            self.segments.append(new_segment)
+            self.AddSegment(position)
+
+    # creating snake
+    def AddSegment(self, position):
+        new_segment = Turtle(shape="square")
+        new_segment.penup()
+        new_segment.color("white")
+        new_segment.goto(position)
+        new_segment.speed("fast")
+        self.segments.append(new_segment)
+
+    # extending Snake
+
+    def extend(self):
+        self.AddSegment(self.segments[-1].position())
 
     # Moving snake without laggging
     def move(self):
@@ -29,13 +42,17 @@ class Snake:
         self.snake_head.forward(MOVE_DISTANCE)
 
     def up(self):
-        self.snake_head.setheading(90)
+        if self.snake_head.heading() != DOWN:
+            self.snake_head.setheading(UP)
 
     def down(self):
-        self.snake_head.setheading(270)
+        if self.snake_head.heading() != UP:
+            self.snake_head.setheading(DOWN)
 
     def left(self):
-        self.snake_head.setheading(180)
+        if self.snake_head.heading() != RIGHT:
+            self.snake_head.setheading(LEFT)
 
     def right(self):
-        self.snake_head.setheading(360)
+        if self.snake_head.heading() != LEFT:
+            self.snake_head.setheading(RIGHT)
