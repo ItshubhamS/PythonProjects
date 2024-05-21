@@ -29,8 +29,8 @@ while game_is_on:
         score_board.score_count()
         snake.extend()
         food.refresh()
-        print(speed)
-        speed += 10
+        # print(speed)
+        # speed += 10
     #     detect collision with wall
     if (
         snake.snake_head.xcor() > 280
