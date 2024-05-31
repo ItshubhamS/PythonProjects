@@ -15,10 +15,14 @@ all_states = data.state.tolist()
 guessed_states = []
 
 while len(guessed_states) < 30:
-    answer_state = screen.textinput(
-        title=f"{len(guessed_states)}/30 States Correct",
-        prompt="What's another state's name?",
-    ).title()
+    answer_state = (
+        screen.textinput(
+            title=f"{len(guessed_states)}/30 States Correct",
+            prompt="What's another state's name?",
+        )
+        .title()
+        .strip()
+    )
     if answer_state == "Exit":
         missing_states = []
         for state in all_states:
